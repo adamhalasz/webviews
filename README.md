@@ -1,3 +1,5 @@
+![WebViews Icon](http://i.imgur.com/Qwba5TC.png)
+
 # WebViews
 An Angular2 NativeScript WebView Service that works on iOS and Android as well.
 
