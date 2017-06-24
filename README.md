@@ -138,7 +138,7 @@ Attach a Stylesheet
 - **fileName**: The stylesheet file to load within the folder 
 
 ### webview.dispatch(): void
-Dispatch Listeners
+Dispatch Event Listeners. This method should be called within `ngOnDestroy` event in a component.
 
 
 # License
