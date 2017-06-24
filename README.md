@@ -16,7 +16,7 @@ An Angular2 NativeScript WebView Service that works on iOS and Android as well.
 npm install webviews
 ```
 
-## Usage
+# Usage
 
 ```ts
 // ~/yourProject/app/my/my.component.ts
@@ -70,9 +70,9 @@ Result:
 -->
 ```
 
-## API
+# API
 
-### WebView Class
+## WebView Class
 
 ### var webViewInstance = new WebViews(webViewElementRef: any, folder: any, file: any)
 
@@ -80,24 +80,24 @@ Result:
 - **folder**: The folder name where the html file is located
 - **file**: The name of the html file to load within the folder 
 
-### WebView Instance Parameters
+## WebView Instance Parameters
 
-#### webview.interface
+### webview.interface
 An Object that containing methods that allow bi-directional communication between the Web View and the nativescript parent.
 
-##### webview.interface.on(eventName: string, callback: Function): void
+#### webview.interface.on(eventName: string, callback: Function): void
 Listen on events
 
 - **eventName**: The event name to listen to
 - **eventData**: A callback function that gets called when it is emitted
 
-##### webview.interface.emit(eventName: string, eventData: any): void
+#### webview.interface.emit(eventName: string, eventData: any): void
 - **eventName**: The event name to listen to
 - **eventData**: Data to send to the listener callback
 
-### Webview Instnace Methods
+## WebView Instance Methods
 
-#### webview.set(key: string, value: any): void
+### webview.set(key: string, value: any): void
 Set context parameter
 
 - **key**: The context parameter name
@@ -117,29 +117,29 @@ Will Become:
 ```html
 <h1>Hello John Doe</h1>
 ```
-#### webview.load(initialContext?: any): Promise <any>
+### webview.load(initialContext?: any): Promise <any>
 Load the HTML File. 
 
 - **initialContext**: An object that sets context parameters. 
 
-#### webview.addScript(folderName: string, fileName: string, params?: any):  Promise <any>
+### webview.addScript(folderName: string, fileName: string, params?: any):  Promise <any>
 Attach a Script
 
 - **folderName**: The folder name where the script is located
 - **fileName**: The script file name to load within the folder 
 - **params**: An array of key-value objects for settings parameters on the script tag 
 
-#### webview.addStyle(folderName: string, fileName: string, params?: any):  Promise <any>
+### webview.addStyle(folderName: string, fileName: string, params?: any):  Promise <any>
 Attach a Stylesheet
 
 - **folderName**: The folder name where the stylesheet is located
 - **fileName**: The stylesheet file to load within the folder 
 
-#### webview.dispatch(): void
+### webview.dispatch(): void
 Dispatch Listeners
 
 
-## License
+# License
 MIT License
 
 Copyright (c) 2017 Adam Halasz mail@adamhalasz.com
