@@ -15,7 +15,7 @@ An Angular2 NativeScript WebView Module that works on iOS and Android as well.
 
 ## Install
 ```
-npm install webviews
+npm install webviews --save
 ```
 
 or:
