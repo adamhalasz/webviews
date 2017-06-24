@@ -65,6 +65,17 @@ export class MyComponent implements OnInit, OnDestroy  {
 ```html 
 <!-- ~/myProject/app/www/index.html -->
 <h1>Hello {{name}}!</h1>
+<script>
+    window.onload = function(){
+        var webViewInterface = window.nsWebViewInterface;
+
+        webViewInterface.emit('message', 'loading')
+        webViewInterface.on('update', function(message){
+            alert(message);
+        })
+    }
+    
+</script>
 
 <!--
 Result:
