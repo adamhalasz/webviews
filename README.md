@@ -48,7 +48,7 @@ export class MyComponent implements OnInit, OnDestroy  {
         this.webview.set('name', 'John Doe');
 
         // Load WebView Template
-        this.webview.load().then( () => {
+        this.webview.load().then(() => {
             this.webview.interface.emit('init', 'hello from the parent')
             this.webview.interface.on('message', (message) => {
                 alert(message);
@@ -56,7 +56,7 @@ export class MyComponent implements OnInit, OnDestroy  {
         })
     }
 
-    ngOnDestroy(): void{
+    ngOnDestroy(): void {
         this.webview.dispatch();
     }
 }
@@ -74,7 +74,6 @@ export class MyComponent implements OnInit, OnDestroy  {
             alert(message);
         })
     }
-    
 </script>
 
 <!--
