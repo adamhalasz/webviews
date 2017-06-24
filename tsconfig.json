@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./demo/node_modules/tns-core-modules/*",
+                "./demo/node_modules/*"
+            ]
+        }
+    },
+    "files": [
+        "./demo/node_modules/tns-core-modules/tns-core-modules.d.ts",
+        "index.common.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "platforms",
+        "**/*.aot.ts"
+    ]
+}

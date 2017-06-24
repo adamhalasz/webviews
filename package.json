@@ -1,0 +1,25 @@
+{
+  "name": "webviews",
+  "version": "1.0.0",
+  "main": "index.common.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "nativescript": {
+    "id": "org.nativescript.webviews",
+    "tns-android": {
+      "version": "3.0.1"
+    },
+    "tns-ios": {
+      "version": "3.0.1"
+    }
+  },
+  "typings": "index.d.ts",
+  "dependencies": {
+    "handlebars": "^4.0.10",
+    "nativescript-webview-interface": "^1.4.1"
+  },
+  "devDependencies": {
+    "dts-generator": "^2.1.0"
+  }
+}
