@@ -1,8 +1,5 @@
 *.js
 *.js.map
 *.log
-demo/app/*.js
-demo/*.d.ts
-demo/platforms
-demo/node_modules
+demo
 node_modules

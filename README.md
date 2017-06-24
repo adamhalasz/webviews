@@ -74,16 +74,26 @@ Result:
 
 ### WebView Class
 
-```
+### var webViewInstance = new WebViews(webViewElementRef: any, folder: any, file: any)
 
-```
+- **webViewElementRef**: An ElementRef object from @ViewChild
+- **folder**: The folder name where the html file is located
+- **file**: The name of the html file to load within the folder 
 
 ### WebView Instance Parameters
 
-#### interface
-An Object that allows bi directional communication between the Web View and the nativescript parent.
-##### interface.on(eventName: string, value: any): void
-##### interface.emit(eventName: string, value: any): void
+#### webview.interface
+An Object that containing methods that allow bi-directional communication between the Web View and the nativescript parent.
+
+##### webview.interface.on(eventName: string, callback: Function): void
+Listen on events
+
+- **eventName**: The event name to listen to
+- **eventData**: A callback function that gets called when it is emitted
+
+##### webview.interface.emit(eventName: string, eventData: any): void
+- **eventName**: The event name to listen to
+- **eventData**: Data to send to the listener callback
 
 ### Webview Instnace Methods
 
