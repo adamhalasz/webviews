@@ -21,7 +21,7 @@ npm install webviews
 # Usage
 
 ```ts
-// ~/yourProject/app/my/my.component.ts
+// ~/yourProject/app/MyComponent/MyComponent.component.ts
 import { Component, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { WebViews } from 'webviews';
 
@@ -42,7 +42,7 @@ export class MyComponent implements OnInit, OnDestroy  {
 
     ngOnInit(): void {
         // Create WebView Service Instance
-        this.webview = new WebView(this.webViewElement)
+        this.webview = new WebView(this.webViewElement, 'www', 'index.html')
         
         // Set context paramaeter
         this.webview.set('name', 'John Doe');
@@ -63,7 +63,7 @@ export class MyComponent implements OnInit, OnDestroy  {
 ```
 
 ```html 
-<!-- ~/yourProject/app/my/my.webview.html -->
+<!-- ~/yourProject/app/www/index.html -->
 <h1>Hello {{name}}!</h1>
 
 <!--
