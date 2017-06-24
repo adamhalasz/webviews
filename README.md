@@ -1,7 +1,7 @@
 ![WebViews Icon](http://i.imgur.com/Qwba5TC.png)
 
 # WebViews
-An Angular2 NativeScript WebView Service that works on iOS and Android as well.
+An Angular2 NativeScript WebView Module that works on iOS and Android as well.
 
 ## Requirements
 - NativeScript 3.0.1
@@ -17,6 +17,13 @@ An Angular2 NativeScript WebView Service that works on iOS and Android as well.
 ```
 npm install webviews
 ```
+
+or:
+
+```
+tns plugin add webviews
+```
+
 
 # Usage
 
