@@ -1,6 +1,6 @@
 {
   "name": "webviews",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.common.js",
   "scripts": {
     "build": "tsc"
@@ -16,6 +16,7 @@
   },
   "typings": "index.d.ts",
   "dependencies": {
+    "color": "^1.0.3",
     "handlebars": "^4.0.10",
     "nativescript-webview-interface": "^1.4.1"
   },

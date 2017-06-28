@@ -3,6 +3,8 @@ import { WebView, LoadEventData } from 'tns-core-modules/ui/web-view';
 import * as fs from "tns-core-modules/file-system";
 import * as webViewInterfaceModule from 'nativescript-webview-interface';
 import * as Handlebars from 'handlebars';
+import { isIOS, isAndroid } from "platform";
+import * as colorModule from 'color';
 
 export class WebViews {
 
@@ -52,7 +54,17 @@ export class WebViews {
 
             let webView: WebView = this.element.nativeElement;
             this.element = webView;
-            webView.ios.scrollView.bounces = false;
+            
+            if(isIOS){
+                webView.ios.scrollView.bounces = false;
+                let translucent = new colorModule.Color("#00ff0000");
+                this.element.ios.backgroundColor = translucent.ios;
+                this.element.ios.opaque = false;
+                
+            } else if (isAndroid) {
+                webView.android.setBackgroundColor(0x00000000);//android.graphics.Color.TRANSPARENT);//
+                webView.android.setLayerType(webView.android.view.View.LAYER_TYPE_SOFTWARE, null);
+            }
 
             this.htmlFile.readText().then((content: string) => {
                 //console.log('WebViewService: index.html content: {', content.replace(/\n/gi, '<br>'), '}');
@@ -132,6 +144,12 @@ export class WebViews {
         if(this.isDebugEnabled) console.log('\nWebView: loadEventHandler called');
         return (args: webViewModule.LoadEventData) => {
             loadedTimes++;
+
+            var webview:WebView = <WebView>args.object;
+            if(isAndroid){
+                webview.android.getSettings().setDisplayZoomControls(false);
+            }
+
             if(this.isDebugEnabled) console.log('\n WebView: loadEventHandler function within called #', loadedTimes);
 
             for(let index in args){
@@ -146,9 +164,7 @@ export class WebViews {
                 message = "Error loading [" + args.url + "]: " + args.error;
                 if(this.isDebugEnabled) console.log('WebView:  webViewModule.WebView.loadFinishedEvent message', message);
             }
-            if(loadedTimes == 2) {
-                resolve()
-            }
+            resolve()
         }
     }
 }
